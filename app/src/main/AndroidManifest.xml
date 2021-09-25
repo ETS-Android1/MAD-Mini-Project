@@ -9,6 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Study_with_teddy">
+        <activity android:name=".CFlashCardsMain"></activity>
         <activity android:name=".CGMPsettingsMain" />
         <activity android:name=".CGMPdecoRoomMain" />
         <activity android:name=".MpomodoroMain" />
@@ -16,7 +17,6 @@
         <activity android:name=".MTimmer" />
         <activity android:name=".GchillHitsMain" />
         <activity android:name=".PtoToListMain" />
-        <activity android:name=".CflashCardsMain" />
         <activity android:name=".Menu" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SignUp" />
