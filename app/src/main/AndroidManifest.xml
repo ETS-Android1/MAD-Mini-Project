@@ -14,7 +14,7 @@
         <activity android:name=".MpomodoroMain" />
         <activity android:name=".GchillHitsMain" />
         <activity android:name=".PtoToListMain" />
-        <activity android:name=".CflashCardsMain" />
+        <activity android:name=".CFlashCardsMain" />
         <activity android:name=".Menu" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SignUp" />
