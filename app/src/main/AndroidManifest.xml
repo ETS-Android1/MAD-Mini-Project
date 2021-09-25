@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.study_with_teddy">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,14 +15,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Study_with_teddy">
-        <activity android:name=".CFlashCardsMain"></activity>
-        <activity android:name=".CGMPsettingsMain" />
-        <activity android:name=".CGMPdecoRoomMain" />
+        <activity android:name=".ALLsettingsMain" />
+        <activity android:name=".ALLPdecoRoomMain" />
         <activity android:name=".MpomodoroMain" />
-        <activity android:name=".MShowActivity" />
-        <activity android:name=".MTimmer" />
         <activity android:name=".GchillHitsMain" />
+        <activity
+            android:name=".GMusicPlayer"
+            android:exported="true"/>
+
         <activity android:name=".PtoToListMain" />
+        <activity android:name=".CFlashCardsMain" />
+        <activity android:name=".CShowActivity" />
         <activity android:name=".Menu" />
         <activity android:name=".HomeActivity" />
         <activity android:name=".SignUp" />
