@@ -12,3 +12,6 @@ public class GchillHitsMain extends AppCompatActivity {
         setContentView(R.layout.activity_gchill_hits_main);
     }
 }
+
+
+//hahahhaa
