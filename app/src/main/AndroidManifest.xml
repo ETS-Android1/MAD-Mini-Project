@@ -12,6 +12,8 @@
         <activity android:name=".CGMPsettingsMain" />
         <activity android:name=".CGMPdecoRoomMain" />
         <activity android:name=".MpomodoroMain" />
+        <activity android:name=".MShowActivity" />
+        <activity android:name=".MTimmer" />
         <activity android:name=".GchillHitsMain" />
         <activity android:name=".PtoToListMain" />
         <activity android:name=".CflashCardsMain" />
