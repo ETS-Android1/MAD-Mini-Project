@@ -18,6 +18,8 @@
         <activity android:name=".ALLsettingsMain" />
         <activity android:name=".ALLPdecoRoomMain" />
         <activity android:name=".MpomodoroMain" />
+        <activity android:name=".MShowActivity" />
+        <activity android:name=".MTimmer" />
         <activity android:name=".GchillHitsMain" />
         <activity
             android:name=".GMusicPlayer"
