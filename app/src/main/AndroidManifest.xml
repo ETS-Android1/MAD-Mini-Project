@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Study_with_teddy">
-        <activity android:name=".CGMPsettingsMain" />
-        <activity android:name=".CGMPdecoRoomMain" />
+        <activity android:name=".ALLsettingsMain" />
+        <activity android:name=".ALLPdecoRoomMain" />
         <activity android:name=".MpomodoroMain" />
         <activity android:name=".GchillHitsMain" />
         <activity android:name=".PtoToListMain" />

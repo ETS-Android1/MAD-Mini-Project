@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class CGMPdecoRoomMain extends AppCompatActivity {
+public class ALLsettingsMain extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cgmpdeco_room_main);
+        setContentView(R.layout.activity_cgmpsettings_main);
     }
 }
