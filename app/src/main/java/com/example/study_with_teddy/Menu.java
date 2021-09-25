@@ -1,0 +1,73 @@
+package com.example.study_with_teddy;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.ImageButton;
+
+public class Menu extends AppCompatActivity {
+    private ImageButton flashCardsBtn;
+    private ImageButton toDoListBtn;
+    private ImageButton chillHitsBtn;
+    private ImageButton pomodoroBtn;
+    private ImageButton decoRoomBtn;
+    private ImageButton settingsBtn;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_menu);
+        flashCardsBtn = findViewById(R.id.flashcards_btn);
+        toDoListBtn = findViewById(R.id.todolist_btn);
+        chillHitsBtn = findViewById(R.id.chillhits_btn);
+        pomodoroBtn= findViewById(R.id.pomodoro_btn);
+        decoRoomBtn= findViewById(R.id.decoroom_btn);
+        settingsBtn= findViewById(R.id.settings_btn);
+
+        flashCardsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this,CflashCardsMain.class));
+
+            }
+        });
+        toDoListBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this,PtoToListMain.class));
+
+            }
+        });
+        chillHitsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this,GchillHitsMain.class));
+
+            }
+        });
+        pomodoroBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this,MpomodoroMain.class));
+
+            }
+        });
+        decoRoomBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this,CGMPdecoRoomMain.class));
+
+            }
+        });
+        settingsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this,CGMPsettingsMain.class));
+
+            }
+        });
+    }
+}
