@@ -21,7 +21,7 @@ public class HomeActivity extends AppCompatActivity {
         getStarted.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startAtivity(new Intent(HomeActivity.this,Menu.class));
+                startActivity(new Intent(HomeActivity.this,Menu.class));
 
             }
         });
