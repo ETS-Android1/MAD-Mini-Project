@@ -19,12 +19,12 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ShowActivity extends AppCompatActivity {
+public class CShowActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private FirebaseFirestore db;
-    private MyAdapter adapter;
-    private List<Model> list;
+    private CAdapter adapter;
+    private List<CModel> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,24 +37,24 @@ public class ShowActivity extends AppCompatActivity {
 
         db= FirebaseFirestore.getInstance();
         list = new ArrayList<>();
-        adapter = new MyAdapter(this , list);
+        adapter = new CAdapter(this , list);
         recyclerView.setAdapter(adapter);
 
-        ItemTouchHelper touchHelper = new ItemTouchHelper(new TouchHelper(adapter));
+        ItemTouchHelper touchHelper = new ItemTouchHelper(new CTouchHelper(adapter));
         touchHelper.attachToRecyclerView(recyclerView);
         showData();
     }
 
     public void showData(){
 
-        db.collection("Documents").get()
+        db.collection("Flashcards").get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         list.clear();
                         for (DocumentSnapshot snapshot : task.getResult()){
 
-                            Model model = new Model(snapshot.getString("id") , snapshot.getString("title") , snapshot.getString("desc"));
+                            CModel model = new CModel(snapshot.getString("id") , snapshot.getString("title") , snapshot.getString("desc"));
                             list.add(model);
                         }
                         adapter.notifyDataSetChanged();
@@ -62,7 +62,7 @@ public class ShowActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(ShowActivity.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
+                Toast.makeText(CShowActivity.this, "Oops ... something went wrong", Toast.LENGTH_SHORT).show();
             }
         });
     }

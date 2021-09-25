@@ -52,7 +52,7 @@ public class CFlashCardsMain extends AppCompatActivity {
         mShowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CFlashCardsMain.this , ShowActivity.class));
+                startActivity(new Intent(CFlashCardsMain.this , CShowActivity.class));
             }
         });
 
@@ -79,7 +79,7 @@ public class CFlashCardsMain extends AppCompatActivity {
 
     private void updateToFireStore(String id , String title , String desc){
 
-        db.collection("Documents").document(id).update("title" , title , "desc" , desc)
+        db.collection("Flashcards").document(id).update("title" , title , "desc" , desc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
@@ -106,7 +106,7 @@ public class CFlashCardsMain extends AppCompatActivity {
             map.put("title" , title);
             map.put("desc" , desc);
 
-            db.collection("Documents").document(id).set(map)
+            db.collection("Flashcards").document(id).set(map)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

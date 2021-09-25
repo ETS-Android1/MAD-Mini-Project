@@ -17,18 +17,18 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
-public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
-    private ShowActivity activity;
-    private List<Model> mList;
+public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
+    private CShowActivity activity;
+    private List<CModel> mList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public MyAdapter(ShowActivity activity , List<Model> mList){
+    public CAdapter(CShowActivity activity , List<CModel> mList){
         this.activity = activity;
         this.mList = mList;
     }
 
     public void updateData(int position){
-        Model item = mList.get(position);
+        CModel item = mList.get(position);
         Bundle bundle = new Bundle();
         bundle.putString("uId" , item.getId());
         bundle.putString("uTitle" , item.getTitle());
@@ -39,8 +39,8 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     }
 
     public void deleteData(int position){
-        Model item = mList.get(position);
-        db.collection("Documents").document(item.getId()).delete()
+        CModel item = mList.get(position);
+        db.collection("Flashcards").document(item.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
