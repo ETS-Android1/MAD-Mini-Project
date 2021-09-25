@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class Menu extends AppCompatActivity {
@@ -58,14 +57,14 @@ public class Menu extends AppCompatActivity {
         decoRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this,CGMPdecoRoomMain.class));
+                startActivity(new Intent(Menu.this, ALLPdecoRoomMain.class));
 
             }
         });
         settingsBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this,CGMPsettingsMain.class));
+                startActivity(new Intent(Menu.this, ALLsettingsMain.class));
 
             }
         });

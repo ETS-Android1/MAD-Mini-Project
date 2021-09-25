@@ -123,5 +123,10 @@ public class CFlashCardsMain extends AppCompatActivity {
 
         }else
             Toast.makeText(this, "Empty Fields not Allowed", Toast.LENGTH_SHORT).show();
-    }
+    
 }
+
+}
+
+
+
