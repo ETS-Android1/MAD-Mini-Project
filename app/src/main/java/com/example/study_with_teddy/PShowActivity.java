@@ -44,7 +44,7 @@ public class PShowActivity extends AppCompatActivity {
         touchHelper.attachToRecyclerView(recyclerView);
         showData();
     }
-//retrive data
+
     public void showData(){
 
         db.collection("TodoLists").get()
