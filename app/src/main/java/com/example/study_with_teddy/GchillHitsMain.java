@@ -59,4 +59,3 @@ public class GchillHitsMain extends AppCompatActivity {
 
 
 
-//hahahhaa
