@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Study_with_teddy">
         <activity android:name=".ALLsettingsMain" />
+        <activity android:name=".listSettings" />
         <activity android:name=".AllPdecoRoomMain" />
         <activity android:name=".MpomodoroMain" />
         <activity android:name=".MShowActivity" />
