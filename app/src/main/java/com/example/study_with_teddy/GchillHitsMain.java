@@ -35,7 +35,7 @@ public class GchillHitsMain extends AppCompatActivity {
          favorite.setOnClickListener(new View.OnClickListener() {
              @Override
              public void onClick(View view) {
-//                 startActivity(new Intent(GchillHitsMain.this, GFavourites.class));
+                startActivity(new Intent(GchillHitsMain.this, GFavouritesMain.class));
              }
          });
 

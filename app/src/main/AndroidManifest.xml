@@ -21,9 +21,12 @@
         <activity android:name=".MShowActivity" />
         <activity android:name=".MTimmer" />
         <activity android:name=".GchillHitsMain" />
+        <activity android:name=".GFavouritesMain" />
+        <activity android:name=".GShowActivity" />
         <activity
             android:name=".GMusicPlayer"
             android:exported="true"/>
+
 
         <activity android:name=".PtoToListMain" />
         <activity android:name=".CFlashCardsMain" />
