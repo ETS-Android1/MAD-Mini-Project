@@ -17,6 +17,7 @@ public class ALLsettingsMain extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_allsettingsmain);
         guide = findViewById(R.id.button);
+        youtube = findViewById(R.id.youtube);
 
         guide.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -29,7 +30,7 @@ public class ALLsettingsMain extends AppCompatActivity {
         youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoUrl("https://www.youtube.com/");
+                gotoUrl("https://youtube.com/channel/UCVlecad-Zio9UxQ_5mXZf7g");
             }
 
         });
