@@ -16,5 +16,7 @@
     <color name="cuteblue">#add8e6</color>
     <color name="green">#98fb98</color>
     <color name="red">#ff0000</color>
-
-</resources>
+    <color name ="lightred">#F44336</color>
+    <color name = "lightgreennew">#8BC34A</color>
+    <color name="newyellow">#FFEB3B</color>
+    </resources>

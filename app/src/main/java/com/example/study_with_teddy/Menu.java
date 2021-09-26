@@ -57,7 +57,7 @@ public class Menu extends AppCompatActivity {
         decoRoomBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this, ALLPdecoRoomMain.class));
+                startActivity(new Intent(Menu.this, AllPdecoRoomMain.class));
 
             }
         });
