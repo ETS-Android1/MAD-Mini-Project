@@ -36,7 +36,7 @@ public class Menu extends AppCompatActivity {
         toDoListBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this,PtoToListMain.class));
+                startActivity(new Intent(Menu.this,PTodoListsMain.class));
 
             }
         });

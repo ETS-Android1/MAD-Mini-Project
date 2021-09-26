@@ -27,8 +27,8 @@
             android:name=".GMusicPlayer"
             android:exported="true"/>
 
-
-        <activity android:name=".PtoToListMain" />
+        <activity android:name=".PTodoListsMain" />
+        <activity android:name=".PShowActivity" />
         <activity android:name=".CFlashCardsMain" />
         <activity android:name=".CShowActivity" />
         <activity android:name=".Menu" />

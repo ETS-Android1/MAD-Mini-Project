@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GShowActivity">
+    tools:context=".GShowActivity"
+    android:background="@drawable/wallpapernew">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -21,10 +22,11 @@
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#009688"
+        android:background="#F0F6F6"
         android:fontFamily="monospace"
         android:gravity="center"
         android:text="Favourites"
+        android:textStyle="bold"
         android:textAlignment="center"
         android:textColorLink="#0E0C0C"
         android:textSize="20sp"

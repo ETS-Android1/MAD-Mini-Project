@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpapernew"
-    tools:context=".CShowActivity">
+    tools:context=".PShowActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
@@ -14,18 +14,19 @@
         android:background="#E8FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.682" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#F4F6F6"
+        android:background="#EBF1F0"
         android:fontFamily="monospace"
         android:gravity="center"
-        android:text="All Flashcards"
+        android:text="To Do List"
         android:textStyle="bold"
         android:textAlignment="center"
         android:textColorLink="#0E0C0C"

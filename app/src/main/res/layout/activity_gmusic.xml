@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#191A1F"
+    android:background="#0C0C0C"
     tools:context=".GMusicPlayer">
 
     <RelativeLayout
@@ -31,10 +31,10 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:layout_marginEnd="147dp"
-            android:layout_marginRight="147dp"
+            android:layout_marginEnd="155dp"
+            android:layout_marginRight="155dp"
             android:text="Music Player"
-            android:textColor="#FFFFFF"
+            android:textColor="#F1EBEB"
             android:textSize="18sp"
             android:textStyle="bold" />
 
