@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardElevation="8dp"
+    android:background="@drawable/menuwallpaper"
     android:layout_margin="13dp">
 
     <LinearLayout

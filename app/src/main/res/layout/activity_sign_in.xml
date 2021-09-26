@@ -78,7 +78,9 @@ tools:context=".SignIn">
         android:hint="Password"
         android:padding="20dp"
         android:textAlignment="center"
-        android:textColor="@color/haloBlue" />
+        android:textColor="@color/haloBlue"
+        android:ems="10"
+        android:inputType="textPassword"/>
 
     <Space
         android:layout_width="match_parent"
