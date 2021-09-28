@@ -18,9 +18,9 @@
         <activity android:name=".ALLsettingsMain" />
         <activity android:name=".listSettings" />
         <activity android:name=".AllPdecoRoomMain" />
-        <activity android:name=".MpomodoroMain" />
-        <activity android:name=".MShowActivity" />
-        <activity android:name=".MTimmer" />
+        <activity android:name=".ZpomodoroMain" />
+        <activity android:name=".ZShowActivity" />
+        <activity android:name=".ZTimmer" />
         <activity android:name=".GchillHitsMain" />
         <activity android:name=".GFavouritesMain" />
         <activity android:name=".GShowActivity" />

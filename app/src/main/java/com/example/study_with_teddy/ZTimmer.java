@@ -14,7 +14,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Locale;
 
-public class MTimmer extends AppCompatActivity {
+public class ZTimmer extends AppCompatActivity {
     private EditText mEditTextInput;
     private TextView mTextViewCountDown;
     private Button mButtonSet;
@@ -46,13 +46,13 @@ public class MTimmer extends AppCompatActivity {
             public void onClick(View v) {
                 String input = mEditTextInput.getText().toString();
                 if (input.length() == 0) {
-                    Toast.makeText(MTimmer.this, "Field can't be empty", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZTimmer.this, "Field can't be empty", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
                 long millisInput = Long.parseLong(input) * 60000;
                 if (millisInput == 0) {
-                    Toast.makeText(MTimmer.this, "Please enter a positive number", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZTimmer.this, "Please enter a positive number", Toast.LENGTH_SHORT).show();
                     return;
                 }
 

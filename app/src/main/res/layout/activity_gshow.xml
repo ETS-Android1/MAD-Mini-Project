@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewP2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="#F0F6F6"

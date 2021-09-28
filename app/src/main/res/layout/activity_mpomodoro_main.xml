@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/wallpapernew"
-    tools:context=".MpomodoroMain">
+    tools:context=".ZpomodoroMain">
 
     <EditText
         android:id="@+id/edit_title"
@@ -20,7 +20,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/textViewP2" />
 
     <EditText
         android:id="@+id/edit_desc"
@@ -82,7 +82,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewP2"
         android:layout_width="190dp"
         android:layout_height="23dp"
         android:layout_marginTop="40dp"

@@ -13,7 +13,7 @@
         android:layout_height="95dp"
         android:background="@drawable/buttons"
         android:padding="17dp"
-        android:text="Get Started"
+        android:text="@string/get_started"
         android:textAllCaps="false"
         android:textColor="@android:color/white"
         android:textSize="20sp"

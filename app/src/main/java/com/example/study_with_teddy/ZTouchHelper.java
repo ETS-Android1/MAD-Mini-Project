@@ -1,7 +1,6 @@
 package com.example.study_with_teddy;
 
 import android.graphics.Canvas;
-import android.graphics.Color;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.ItemTouchHelper;
@@ -9,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import it.xabaras.android.recyclerview.swipedecorator.RecyclerViewSwipeDecorator;
 
-public class MTouchHelper extends ItemTouchHelper.SimpleCallback {
+public class ZTouchHelper extends ItemTouchHelper.SimpleCallback {
 
-    private MAdapter adapter;
-    public MTouchHelper(MAdapter adapter) {
+    private ZAdapter adapter;
+    public ZTouchHelper(ZAdapter adapter) {
         super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
     }
@@ -37,7 +36,7 @@ public class MTouchHelper extends ItemTouchHelper.SimpleCallback {
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
 
         new RecyclerViewSwipeDecorator.Builder(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive)
-                .addSwipeRightBackgroundColor(Color.RED)
+                .addSwipeRightBackgroundColor(R.color.purple_500)
                 .addSwipeRightActionIcon(R.drawable.ic_baseline_delete_24)
                 .addSwipeLeftBackgroundColor(R.color.purple_500)
                 .addSwipeLeftActionIcon(R.drawable.ic_baseline_edit_24)

@@ -12,23 +12,23 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:textSize="24sp"
-        android:textColor="#000"
-        android:padding="8dp"
-        android:id="@+id/title_text"/>
-
         <TextView
+            android:id="@+id/title_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Description.."
-            android:textSize="18sp"
-            android:textColor="#000"
             android:padding="8dp"
-            android:id="@+id/desc_text"/>
+            android:text="@string/title_text"
+            android:textColor="#000"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/desc_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="@string/desc_text"
+            android:textColor="#000"
+            android:textSize="18sp" />
 
 
 

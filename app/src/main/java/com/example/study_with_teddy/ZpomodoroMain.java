@@ -18,7 +18,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.UUID;
 
-public class MpomodoroMain extends AppCompatActivity {
+public class ZpomodoroMain extends AppCompatActivity {
 
     private EditText mTitle, mDesc;
     private Button mSaveBtn, mShowBtn;
@@ -42,7 +42,7 @@ public class MpomodoroMain extends AppCompatActivity {
         Timmer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MpomodoroMain.this, com.example.study_with_teddy.MTimmer.class));
+                startActivity(new Intent(ZpomodoroMain.this, ZTimmer.class));
 
             }
         });
@@ -65,7 +65,7 @@ public class MpomodoroMain extends AppCompatActivity {
         mShowBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(MpomodoroMain.this, MShowActivity.class));
+                startActivity(new Intent(ZpomodoroMain.this, ZShowActivity.class));
             }
         });
 
@@ -93,15 +93,15 @@ public class MpomodoroMain extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(MpomodoroMain.this, "Data Updated!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ZpomodoroMain.this, "Data Updated!", Toast.LENGTH_SHORT).show();
                         }else{
-                            Toast.makeText(MpomodoroMain.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ZpomodoroMain.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MpomodoroMain.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(ZpomodoroMain.this, e.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -118,13 +118,13 @@ public class MpomodoroMain extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(MpomodoroMain.this, "Data Saved!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ZpomodoroMain.this, "Data Saved!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                 @Override
                 public void onFailure(@NonNull Exception e) {
-                    Toast.makeText(MpomodoroMain.this, "Failed!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ZpomodoroMain.this, "Failed!", Toast.LENGTH_SHORT).show();
                 }
             });
         }else

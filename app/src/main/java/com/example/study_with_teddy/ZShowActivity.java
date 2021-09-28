@@ -19,12 +19,12 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MShowActivity extends AppCompatActivity {
+public class ZShowActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private FirebaseFirestore db;
-    private com.example.study_with_teddy.MAdapter adapter;
-    private List<com.example.study_with_teddy.MModel> list;
+    private ZAdapter adapter;
+    private List<ZModel> list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,10 +37,10 @@ public class MShowActivity extends AppCompatActivity {
 
         db= FirebaseFirestore.getInstance();
         list = new ArrayList<>();
-        adapter = new com.example.study_with_teddy.MAdapter(this, list);
+        adapter = new ZAdapter(this, list);
         recyclerView.setAdapter(adapter);
 
-        ItemTouchHelper touchHelper = new ItemTouchHelper(new com.example.study_with_teddy.MTouchHelper(adapter));
+        ItemTouchHelper touchHelper = new ItemTouchHelper(new ZTouchHelper(adapter));
         touchHelper.attachToRecyclerView(recyclerView);
         showData();
     }
@@ -54,7 +54,7 @@ public class MShowActivity extends AppCompatActivity {
                         list.clear();
                         for (DocumentSnapshot snapshot:task.getResult()){
 
-                            com.example.study_with_teddy.MModel model = new com.example.study_with_teddy.MModel(snapshot.getString("id"),snapshot.getString("title"), snapshot.getString("desc"));
+                            ZModel model = new ZModel(snapshot.getString("id"),snapshot.getString("title"), snapshot.getString("desc"));
                             list.add(model);
                         }
                         adapter.notifyDataSetChanged();
@@ -62,7 +62,7 @@ public class MShowActivity extends AppCompatActivity {
                 }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(MShowActivity.this, "Oops.. Something went wrong.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ZShowActivity.this, "Oops.. Something went wrong.", Toast.LENGTH_SHORT).show();
             }
         });
     }

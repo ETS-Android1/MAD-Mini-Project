@@ -17,30 +17,30 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.List;
 
-public class MAdapter extends RecyclerView.Adapter<MAdapter.MyViewHolder> {
-    private MShowActivity activity;
-    private List<com.example.study_with_teddy.MModel> mList;
+public class ZAdapter extends RecyclerView.Adapter<ZAdapter.MyViewHolder> {
+    private ZShowActivity activity;
+    private List<ZModel> mList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public MAdapter(MShowActivity activity, List<com.example.study_with_teddy.MModel> mList){
+    public ZAdapter(ZShowActivity activity, List<ZModel> mList){
         this.activity= activity;
         this.mList= mList;
     }
 
     public void updateData(int position){
-        com.example.study_with_teddy.MModel item = mList.get(position);
+        ZModel item = mList.get(position);
         Bundle bundle = new Bundle();
         bundle.putString("uId", item.getId());
         bundle.putString("uTitle",item.getTitle());
         bundle.putString("uDesc", item.getDesc());
-        Intent intent = new Intent(activity, MpomodoroMain.class);
+        Intent intent = new Intent(activity, ZpomodoroMain.class);
         intent.putExtras(bundle);
         activity.startActivity(intent);
 
     }
 
     public void deleteData(int position) {
-        com.example.study_with_teddy.MModel item = mList.get(position);
+        ZModel item = mList.get(position);
         db.collection("PomodoroSessions").document(item.getId()).delete()
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override

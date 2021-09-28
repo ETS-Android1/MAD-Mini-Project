@@ -1,11 +1,11 @@
 package com.example.study_with_teddy;
 
-public class MModel {
+public class ZModel {
 
     String id, title,desc;
-    public MModel(){}
+    public ZModel(){}
 
-    public MModel(String id, String title, String desc){
+    public ZModel(String id, String title, String desc){
         this.id=id;
         this.title=title;
         this.desc=desc;
