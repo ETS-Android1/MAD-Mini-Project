@@ -30,7 +30,7 @@ public class ALLsettingsMain extends AppCompatActivity {
         youtube.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                gotoUrl("https://youtube.com/channel/UCVlecad-Zio9UxQ_5mXZf7g");
+                gotoUrl("https://youtube.com/playlist?list=PL76x_et3muuQIPQeaOxCjiO5XidjcpBsc");
             }
 
         });
