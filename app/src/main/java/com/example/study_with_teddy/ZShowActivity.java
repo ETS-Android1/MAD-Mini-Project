@@ -45,6 +45,7 @@ public class ZShowActivity extends AppCompatActivity {
         showData();
     }
 
+    //retrieve data
     public void showData() {
 
         db.collection("PomodoroSessions").get()

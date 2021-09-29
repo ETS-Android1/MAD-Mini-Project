@@ -18,25 +18,27 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 public class PAdapter extends RecyclerView.Adapter<PAdapter.MyViewHolder> {
+    //create variables from java classes
     private PShowActivity activity;
     private List<PModel> mList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public PAdapter(PShowActivity activity , List<PModel> mList){
+    public PAdapter(PShowActivity activity , List<PModel> mList){//overloaded constructor
         this.activity = activity;
         this.mList = mList;
     }
 
     public void updateData(int position){
         PModel item = mList.get(position);
-        Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();//pass data between activities
         bundle.putString("uId" , item.getId());
         bundle.putString("uTitle" , item.getTitle());
         Intent intent = new Intent(activity , PTodoListsMain.class);
-        intent.putExtras(bundle);
+        intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
     }
 
+    //delete method
     public void deleteData(int position){
         PModel item = mList.get(position);
         db.collection("TodoLists").document(item.getId()).delete()
@@ -45,7 +47,7 @@ public class PAdapter extends RecyclerView.Adapter<PAdapter.MyViewHolder> {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Data Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Task Deleted !!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

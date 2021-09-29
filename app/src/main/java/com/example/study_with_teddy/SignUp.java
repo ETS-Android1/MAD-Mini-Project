@@ -18,6 +18,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class SignUp extends AppCompatActivity {
+    //attributes
     private EditText mEmail, mPass;
     private Button signUpBtn;
 
@@ -32,7 +33,7 @@ public class SignUp extends AppCompatActivity {
         mPass = findViewById(R.id.password_reg);
         signUpBtn = findViewById(R.id.signup_btn);
 
-        mAuth = FirebaseAuth.getInstance();
+        mAuth = FirebaseAuth.getInstance();//firebase authentication
         
         signUpBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,11 +43,12 @@ public class SignUp extends AppCompatActivity {
         });
     }
 
+    // creating a new user
     private void createUser() {
-        String email = mEmail.getText().toString();
+        String email = mEmail.getText().toString();//string representation of an object
         String pass = mPass.getText().toString();
 
-        if(!email.isEmpty()&& Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+        if(!email.isEmpty()&& Patterns.EMAIL_ADDRESS.matcher(email).matches()) {//email validation
             if (!pass.isEmpty()) {
                 mAuth.createUserWithEmailAndPassword(email,pass)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

@@ -18,26 +18,30 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
+    //create variables from java classes
     private CShowActivity activity;
     private List<CModel> mList;
+
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public CAdapter(CShowActivity activity , List<CModel> mList){
+    public CAdapter(CShowActivity activity , List<CModel> mList){//overloaded constructor
         this.activity = activity;
         this.mList = mList;
     }
 
+    //update method
     public void updateData(int position){
         CModel item = mList.get(position);
-        Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();//pass data between activities
         bundle.putString("uId" , item.getId());
         bundle.putString("uTitle" , item.getTitle());
         bundle.putString("uDesc" , item.getDesc());
         Intent intent = new Intent(activity , CFlashCardsMain.class);
-        intent.putExtras(bundle);
+        intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
     }
 
+    //delete method
     public void deleteData(int position){
         CModel item = mList.get(position);
         db.collection("Flashcards").document(item.getId()).delete()
@@ -46,7 +50,7 @@ public class CAdapter extends RecyclerView.Adapter<CAdapter.MyViewHolder> {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Data Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Flashcard Deleted !!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

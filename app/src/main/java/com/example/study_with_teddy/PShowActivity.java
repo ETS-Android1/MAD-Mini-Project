@@ -45,6 +45,7 @@ public class PShowActivity extends AppCompatActivity {
         showData();
     }
 
+    //retrieve data
     public void showData(){
 
         db.collection("TodoLists").get()

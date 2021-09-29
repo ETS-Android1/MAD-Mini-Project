@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class PTodoListsMain extends AppCompatActivity {
-
+    //attributes
     private EditText mTitle;
     private Button mSaveBtn, mShowBtn;
     private FirebaseFirestore db;
@@ -34,9 +34,9 @@ public class PTodoListsMain extends AppCompatActivity {
         mSaveBtn = findViewById(R.id.save_btn);
         mShowBtn = findViewById(R.id.showall_btn);
 
-        db= FirebaseFirestore.getInstance();
+        db= FirebaseFirestore.getInstance();//firebase fire store connection
 
-        Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();//pass data between activities
         if (bundle != null){
             mSaveBtn.setText("Update");
             uTitle = bundle.getString("uTitle");
@@ -46,7 +46,7 @@ public class PTodoListsMain extends AppCompatActivity {
             mSaveBtn.setText("Save");
         }
 
-        mShowBtn.setOnClickListener(new View.OnClickListener() {
+        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to PShowActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(PTodoListsMain.this , PShowActivity.class));
@@ -54,7 +54,7 @@ public class PTodoListsMain extends AppCompatActivity {
         });
 
 
-        mSaveBtn.setOnClickListener(new View.OnClickListener() {
+        mSaveBtn.setOnClickListener(new View.OnClickListener() {//display saved data to update
             @Override
             public void onClick(View v) {
 
@@ -73,14 +73,14 @@ public class PTodoListsMain extends AppCompatActivity {
         });
     }
 
-    private void updateToFireStore(String id , String title){
+    private void updateToFireStore(String id , String title){//update data
 
         db.collection("TodoLists").document(id).update("title" , title )
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(PTodoListsMain.this, "Data Updated!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(PTodoListsMain.this, "Task Updated!!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(PTodoListsMain.this, "Error : " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
                         }
@@ -94,10 +94,10 @@ public class PTodoListsMain extends AppCompatActivity {
 
     }
 
-    private void saveToFireStore(String id , String title){
+    private void saveToFireStore(String id , String title){//insert data
 
         if (!title.isEmpty()){
-            HashMap<String , Object> map = new HashMap<>();
+            HashMap<String , Object> map = new HashMap<>();//to map identifying values, known as keys
             map.put("id" , id);
             map.put("title" , title);
 
@@ -107,7 +107,7 @@ public class PTodoListsMain extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(PTodoListsMain.this, "Data Saved !!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(PTodoListsMain.this, "Task Saved Successfully!!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

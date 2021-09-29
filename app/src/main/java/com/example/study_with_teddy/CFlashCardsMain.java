@@ -20,6 +20,7 @@ import java.util.UUID;
 
 public class CFlashCardsMain extends AppCompatActivity {
 
+    //attributes
     private EditText mTitle , mDesc;
     private Button mSaveBtn, mShowBtn;
     private FirebaseFirestore db;
@@ -35,9 +36,9 @@ public class CFlashCardsMain extends AppCompatActivity {
         mSaveBtn = findViewById(R.id.save_btn);
         mShowBtn = findViewById(R.id.showall_btn);
 
-        db= FirebaseFirestore.getInstance();
+        db= FirebaseFirestore.getInstance();//firebase fire store connection
 
-        Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();//pass data between activities
         if (bundle != null){
             mSaveBtn.setText("Update");
             uTitle = bundle.getString("uTitle");
@@ -49,7 +50,7 @@ public class CFlashCardsMain extends AppCompatActivity {
             mSaveBtn.setText("Save");
         }
 
-        mShowBtn.setOnClickListener(new View.OnClickListener() {
+        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to CShowActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CFlashCardsMain.this , CShowActivity.class));
@@ -57,7 +58,7 @@ public class CFlashCardsMain extends AppCompatActivity {
         });
 
 
-        mSaveBtn.setOnClickListener(new View.OnClickListener() {
+        mSaveBtn.setOnClickListener(new View.OnClickListener() {//display saved data to update
             @Override
             public void onClick(View v) {
 
@@ -77,14 +78,14 @@ public class CFlashCardsMain extends AppCompatActivity {
         });
     }
 
-    private void updateToFireStore(String id , String title , String desc){
+    private void updateToFireStore(String id , String title , String desc){//update data
 
         db.collection("Flashcards").document(id).update("title" , title , "desc" , desc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(CFlashCardsMain.this, "Data Updated!!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(CFlashCardsMain.this, "Flashcard Updated!!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(CFlashCardsMain.this, "Error : " + task.getException().getMessage() , Toast.LENGTH_SHORT).show();
                         }
@@ -98,10 +99,10 @@ public class CFlashCardsMain extends AppCompatActivity {
 
     }
 
-    private void saveToFireStore(String id , String title , String desc){
+    private void saveToFireStore(String id , String title , String desc){//insert data
 
         if (!title.isEmpty() && !desc.isEmpty()){
-            HashMap<String , Object> map = new HashMap<>();
+            HashMap<String , Object> map = new HashMap<>();//to map identifying values, known as keys
             map.put("id" , id);
             map.put("title" , title);
             map.put("desc" , desc);
@@ -111,7 +112,7 @@ public class CFlashCardsMain extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(CFlashCardsMain.this, "Data Saved !!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(CFlashCardsMain.this, "Flashcard Saved Successfully !!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

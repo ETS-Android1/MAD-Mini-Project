@@ -24,7 +24,7 @@ public class SignIn extends AppCompatActivity {
     private Button signInBtn;
     private TextView mTextView;
 
-    private FirebaseAuth mAuth;
+    private FirebaseAuth mAuth;//firebase attribute
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class SignIn extends AppCompatActivity {
         mTextView = findViewById(R.id.signup);
 
         mAuth = FirebaseAuth.getInstance();
-        mTextView.setOnClickListener(new View.OnClickListener() {
+        mTextView.setOnClickListener(new View.OnClickListener() {//sign in to sign up page
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(SignIn.this,SignUp.class));
@@ -51,7 +51,7 @@ public class SignIn extends AppCompatActivity {
 
         if(!email.isEmpty()&& Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
             if (!pass.isEmpty()) {
-               mAuth.signInWithEmailAndPassword(email,pass)
+               mAuth.signInWithEmailAndPassword(email,pass)//match with email & password
                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                            @Override
                            public void onSuccess(AuthResult authResult) {

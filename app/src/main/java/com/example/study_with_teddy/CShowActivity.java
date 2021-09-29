@@ -45,6 +45,7 @@ public class CShowActivity extends AppCompatActivity {
         showData();
     }
 
+    //retrieve data
     public void showData(){
 
         db.collection("Flashcards").get()

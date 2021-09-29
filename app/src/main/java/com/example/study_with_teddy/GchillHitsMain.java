@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class GchillHitsMain extends AppCompatActivity {
 
-
+    //attributes
     Button songs;
     Button favorite;
     Button youtube;

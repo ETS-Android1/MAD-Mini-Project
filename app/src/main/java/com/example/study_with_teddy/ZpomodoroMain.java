@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class ZpomodoroMain extends AppCompatActivity {
-
+    //attributes
     private EditText mTitle, mDesc;
     private Button mSaveBtn, mShowBtn;
     private Button Timmer;
@@ -48,9 +48,9 @@ public class ZpomodoroMain extends AppCompatActivity {
         });
         //end of intent to timmer
 
-        db = FirebaseFirestore.getInstance();
+        db = FirebaseFirestore.getInstance();//firebase fire store connection
 
-        Bundle bundle = getIntent().getExtras();
+        Bundle bundle = getIntent().getExtras();//pass data between activities
         if(bundle != null){
             mSaveBtn.setText("Update");
             uTitle = bundle.getString("uTitle");
@@ -62,14 +62,14 @@ public class ZpomodoroMain extends AppCompatActivity {
             mSaveBtn.setText("Save");
         }
 
-        mShowBtn.setOnClickListener(new View.OnClickListener() {
+        mShowBtn.setOnClickListener(new View.OnClickListener() {//navigate to ZShowActivity
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(ZpomodoroMain.this, ZShowActivity.class));
             }
         });
 
-        mSaveBtn.setOnClickListener(new View.OnClickListener() {
+        mSaveBtn.setOnClickListener(new View.OnClickListener() {//display saved data to update
             @Override
             public void onClick(View v) {
                 String title = mTitle.getText().toString();
@@ -87,13 +87,13 @@ public class ZpomodoroMain extends AppCompatActivity {
         });
     }
 
-    private void updateToFireStore(String id, String title, String desc) {
+    private void updateToFireStore(String id, String title, String desc) {//update data
         db.collection("PomodoroSessions").document(id).update("title", title , "desc",desc)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
-                            Toast.makeText(ZpomodoroMain.this, "Data Updated!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ZpomodoroMain.this, "Session Updated!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(ZpomodoroMain.this, "Error: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
@@ -106,9 +106,9 @@ public class ZpomodoroMain extends AppCompatActivity {
         });
     }
 
-    private void saveToFireStore(String id, String title, String desc) {
+    private void saveToFireStore(String id, String title, String desc) {//insert data
         if(!title.isEmpty() && !desc.isEmpty()){
-            HashMap<String,Object> map = new HashMap<>();
+            HashMap<String,Object> map = new HashMap<>();//to map identifying values, known as keys
             map.put("id" ,id);
             map.put("title" ,title);
             map.put("desc",desc);
@@ -118,7 +118,7 @@ public class ZpomodoroMain extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if(task.isSuccessful()){
-                                Toast.makeText(ZpomodoroMain.this, "Data Saved!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(ZpomodoroMain.this, "Session Saved Successfully!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {

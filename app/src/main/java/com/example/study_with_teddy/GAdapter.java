@@ -18,25 +18,29 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
+    //create variables from java classes
     private GShowActivity activity;
     private List<GModel> mList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public GAdapter(GShowActivity activity , List<GModel> mList){
+    public GAdapter(GShowActivity activity , List<GModel> mList){//overloaded constructor
         this.activity = activity;
         this.mList = mList;
     }
 
+    //update method
     public void updateData(int position){
+
         GModel item = mList.get(position);
-        Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();//pass data between activities
         bundle.putString("uId" , item.getId());
         bundle.putString("uTitle" , item.getTitle());
         Intent intent = new Intent(activity , GFavouritesMain.class);
-        intent.putExtras(bundle);
+        intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
     }
 
+    //delete method
     public void deleteData(int position){
         GModel item = mList.get(position);
         db.collection("Favourites").document(item.getId()).delete()
@@ -45,7 +49,7 @@ public class GAdapter extends RecyclerView.Adapter<GAdapter.MyViewHolder> {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()){
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Data Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Favourites Deleted !!", Toast.LENGTH_SHORT).show();
                         }else{
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }

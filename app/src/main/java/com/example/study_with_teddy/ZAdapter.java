@@ -18,27 +18,30 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.List;
 
 public class ZAdapter extends RecyclerView.Adapter<ZAdapter.MyViewHolder> {
+    //create variables from java classes
     private ZShowActivity activity;
     private List<ZModel> mList;
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
-    public ZAdapter(ZShowActivity activity, List<ZModel> mList){
+    public ZAdapter(ZShowActivity activity, List<ZModel> mList){//overloaded constructor
         this.activity= activity;
         this.mList= mList;
     }
 
+    //update method
     public void updateData(int position){
         ZModel item = mList.get(position);
-        Bundle bundle = new Bundle();
+        Bundle bundle = new Bundle();//pass data between activities
         bundle.putString("uId", item.getId());
         bundle.putString("uTitle",item.getTitle());
         bundle.putString("uDesc", item.getDesc());
         Intent intent = new Intent(activity, ZpomodoroMain.class);
-        intent.putExtras(bundle);
+        intent.putExtras(bundle);//add extended data to intent
         activity.startActivity(intent);
 
     }
 
+    //delete method
     public void deleteData(int position) {
         ZModel item = mList.get(position);
         db.collection("PomodoroSessions").document(item.getId()).delete()
@@ -47,7 +50,7 @@ public class ZAdapter extends RecyclerView.Adapter<ZAdapter.MyViewHolder> {
                     public void onComplete(@NonNull Task<Void> task) {
                         if (task.isSuccessful()) {
                             notifyRemoved(position);
-                            Toast.makeText(activity, "Data Deleted !!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(activity, "Session Deleted !!", Toast.LENGTH_SHORT).show();
                         } else {
                             Toast.makeText(activity, "Error" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
