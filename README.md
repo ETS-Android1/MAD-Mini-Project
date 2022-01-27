@@ -1,3 +1,5 @@
 # MAD-Mini-Project
 
-Group Project that we have done in 2nd year for Mobile application development module.
+Study with Teddy – Mobile Application – 2nd Year Group Project
+
+This project was carried out using Java with Android studio with Firebase.
